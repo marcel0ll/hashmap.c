@@ -89,7 +89,7 @@ struct hashmap *hashmap_new(size_t elsize, size_t cap,
                                            void *udata),
                             void *udata)
 {
-    int ncap = 16;
+    size_t ncap = 16;
     if (cap < ncap) {
         cap = ncap;
     } else {
