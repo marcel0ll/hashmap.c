@@ -207,7 +207,7 @@ void *hashmap_set(struct hashmap *map, void *item) {
         }
     }
 
-    char edata[map->bucketsz]; // VLA
+    char * edata = malloc(sizeof(char) * map->bucketsz);
     struct bucket *entry = (void*)edata;
     entry->hash = get_hash(map, item);
     entry->dib = 1;
